@@ -8,25 +8,27 @@
 
 #Guardanso informações em variáveis
 
-idade = 18
-eMaiorDeIdade = idade >= 18
-print(eMaiorDeIdade)
+# idade = 18
+# eMaiorDeIdade = idade >= 18
+# print(eMaiorDeIdade)51\
 
-print(True and True)
+# print(True and True)
 
-print(True or False)
+# print(True or False)
+
+
 
 idade = int(input('Qual a sua idade? '))
 if idade < 18:
-    print('recomendo o filme 1')
+    print("recomendo o filme 1")
 elif idade >= 18 and idade < 65:
-    print('recomendo o filme 2')
+    print("recomendo o filme 2")
 else:
-    print('recomendo o filme 3')
+    print("recomendo o filme 3")
 
-    quantidadesDeIngressos = 10
-
-    if quantidadesDeIngressos > 0:
-        print('ingresso disponível')
-    else:
-        print('ingresso indisponível')
+quantidadesDeIngressos = 10
+   
+if quantidadesDeIngressos > 0 :
+    print("ingresso disponível")
+else:
+    print("ingresso indisponível")

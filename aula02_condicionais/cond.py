@@ -1,34 +1,22 @@
-# print(10 > 5)
+chovendo = input("Esta chovendo ?? (sim/nao)")
 
-# print(5 > 10)
+if chovendo == "sim":
+    print("Esta chovendo sim")
+else:
+    print("Esta chovendo nao")
 
-# print(10 == 10)
+idade = int(input("informe a sua idade bebe"))
 
-# print(5 != 10)
-
-#Guardanso informações em variáveis
-
-# idade = 18
-# eMaiorDeIdade = idade >= 18
-# print(eMaiorDeIdade)51\
-
-# print(True and True)
-
-# print(True or False)
-
-
-
-idade = int(input('Qual a sua idade? '))
 if idade < 18:
-    print("recomendo o filme 1")
+    print("Voce é um bebe")
 elif idade >= 18 and idade < 65:
-    print("recomendo o filme 2")
+    print("Ta na hora de aprender errando meu jovem adulto")
 else:
-    print("recomendo o filme 3")
+    print("Nunca e tarde pra nada meu velho")
 
-quantidadesDeIngressos = 10
-   
-if quantidadesDeIngressos > 0 :
-    print("ingresso disponível")
+quantidade_ingressos = 10
+
+if quantidade_ingressos > 0:
+    print("Ingressos estão disponíveis.")
 else:
-    print("ingresso indisponível")
+    print("Todos os ingressos estão esgotados.")

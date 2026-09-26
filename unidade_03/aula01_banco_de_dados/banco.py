@@ -32,7 +32,7 @@ conn = sqlite3.connect('exemplo.db')
 
 cursor = conn.cursor()
 
-novo_produto = ('Camiseta', 19.99, 50)
+novo_produto = ('Camiseta', 19.99, 500)
 
 inserir_produto = "INSERT INTO Produtos (nome, preco, estoque) VALUES (?, ?, ?)"
 
@@ -40,31 +40,54 @@ cursor.execute(inserir_produto, novo_produto)
 
 conn.commit()
 
-cursor.execute("SELECT * FROM Produtos")
+conn.close()
+
+import sqlite3
+
+conn = sqlite3.connect('exemplo.db')
+
+cursor = conn.cursor()
+
+selecionar_produtos = "SELECT * FROM Produtos"
+
+cursor.execute(selecionar_produtos)
 
 produtos = cursor.fetchall()
 
-print(produtos)
-
-conn.close()
-
-import sqlite3
-
-conn = sqlite3.connect("exemplo.db")
-cursor = conn.cursor()
-
-cursor.execute("SELECT * FROM Produtos")
-
-for produto in cursor.fetchall():
+for produto in produtos:
     print(produto)
 
-conn.close()
+    conn.close()
 
-import sqlite3
-import os
+    import sqlite3
 
-conn = sqlite3.connect("exemplo.db")
+    conn = sqlite3.connect('exemplo.db')
 
-print(os.path.abspath("exemplo.db"))
+    cursor = conn.cursor()
+
+    novo_preco = 24.99
+
+    produto_id = 1
+
+    atualizar_preco = "UPDATE Produtos SET preco = ? WHERE id = ?"
+
+    cursor.execute(atualizar_preco, (novo_preco, produto_id))
+
+    conn.commit()
+
+    conn.close()
+
+    import sqlite3
+
+conn = sqlite3.connect('exemplo.db')
+cursor = conn.cursor()
+
+produto_id = 2
+
+excluir_produto = "DELETE FROM Produtos WHERE id = ?"
+
+cursor.execute(excluir_produto, (produto_id,))
+
+conn.commit()
 
 conn.close()
